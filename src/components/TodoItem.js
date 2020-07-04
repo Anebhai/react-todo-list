@@ -6,7 +6,7 @@ export default class Item extends Component {
     return (
       <div>
         <li className="list-group-item d-flex my-2 justify-content-between">
-          <h6>{title}</h6>
+          <h6>{title.toUpperCase()}</h6>
           <div className="todo-icon">
             <span className="mx-2 text-success">
               <i className="fas fa-pen" onClick={handleEdit}></i>
