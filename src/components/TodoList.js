@@ -11,10 +11,15 @@ export default class TodoList extends Component {
           <TodoItem
             key={item.id}
             handleDelete={() => handleDelete(item.id)}
+            handleEdit={() => handleEdit(item.id)}
             title={item.title}
           />
         ))}
-        <button type="button" className="btn btn-danger btn-block my-5">
+        <button
+          type="button"
+          className="btn btn-danger btn-block my-5"
+          onClick={clearList}
+        >
           clear list
         </button>
       </ul>
