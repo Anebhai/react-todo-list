@@ -9,20 +9,33 @@ import { v4 as uuidv4 } from 'uuid';
 
 class App extends Component {
   state = {
-    items: [
-      { id: 1, title: 'wake up' },
-      { id: 1, title: 'wake up' },
-    ],
+    items: [],
     id: uuidv4(),
     item: '',
     editItem: false,
   };
   handleChange = (e) => {
-    console.log('handleChange');
+    this.setState({ item: e.target.value });
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handleSubmit');
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item,
+    };
+    const updatedItems = [...this.state.items, newItem];
+
+    this.setState(
+      {
+        items: updatedItems,
+        id: uuidv4(),
+        item: '',
+        editItem: false,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
   clearList = () => {
     console.log('clearList');
@@ -35,8 +48,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.id);
-
     return (
       <div>
         <div className="container">
