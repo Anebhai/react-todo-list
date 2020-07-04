@@ -6,7 +6,9 @@ export default class TodoList extends Component {
     const { items, clearList, handleDelete, handleEdit } = this.props;
     return (
       <ul className="list-group my-5">
-        <h3 className="text-capitalize text-center">todo list</h3>
+        <h3 className="text-uppercase text-secondary text-center">
+          anees's todo list
+        </h3>
         {items.map((item) => (
           <TodoItem
             key={item.id}
