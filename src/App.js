@@ -21,6 +21,7 @@ class App extends Component {
     console.log('handleChange');
   };
   handleSubmit = (e) => {
+    e.preventDefault();
     console.log('handleSubmit');
   };
   clearList = () => {
